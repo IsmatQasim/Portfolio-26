@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-400: #f472b6; /* pink-400 */
+  --color-primary-500: #ec4899; /* pink-500 */
+  --color-accent-400: #a78bfa; /* purple-400 */
+  --color-accent-500: #8b5cf6; /* purple-500 */
+  --color-dark-surface: #1e1b4b; /* very dark purple/blue */
+  --color-dark-bg: #09090b; /* zinc-950 */
+  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[#09090b] text-zinc-100 font-sans selection:bg-pink-500/30 overflow-x-hidden;
+    /* subtle noise texture */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+  }
+}
+
+.glass-panel {
+  @apply bg-zinc-900/40 backdrop-blur-xl border border-white/5 shadow-2xl;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090b;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}
+
+/* Aesthetic dreamy gradients */
+.dream-gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400;
+}
+.dream-gradient-bg {
+  @apply bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500;
+}
