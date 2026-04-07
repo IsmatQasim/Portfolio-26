@@ -90,16 +90,7 @@ const Hero = () => {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-3xl flex flex-col items-center"
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="mb-8"
-          >
-            <span className="px-6 py-2 rounded-full glass-panel border border-white/10 text-zinc-300 font-light text-xs tracking-[0.2em] shadow-xl uppercase">
-              Portfolio 2026
-            </span>
-          </motion.div>
+          
           
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}

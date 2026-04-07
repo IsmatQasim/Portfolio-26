@@ -4,14 +4,15 @@ import { motion } from 'framer-motion';
 const skillCategories = [
   {
     title: "Front-End Development",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "TailwindCSS", "Bootstrap"],
+    skills: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "TailwindCSS", "Bootstrap",],
     color: "from-pink-400 to-rose-400"
   },
   {
-    title: "Back-End & DB",
-    skills: ["Node.js", "MongoDB", "Event-Driven Architecture", "API Design"],
-    color: "from-purple-400 to-fuchsia-400"
+    title: "Back-End & APIs",
+    skills: ["Node.js", "REST APIs","GraphQL","API Integration", "Express.js", "MongoDB"],
+    color: "from-green-400 to-emerald-400"
   },
+
   {
     title: "Tools & Quality",
     skills: ["Git", "GitHub", "TypeScript", "Figma", "Python", "Pino Logger", "SonarQube"],

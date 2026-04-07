@@ -7,16 +7,13 @@ const experiences = [
     id: 1,
     role: "MERN Stack Developer Intern",
     company: "10Pearls",
-    duration: "2024",
-    description: "Developed and maintained web applications using the MERN stack. Collaborated with cross-functional teams to deliver scalable solutions."
+    duration: "08 Weeks"
   },
   {
     id: 2,
     role: "Front-end Developer Intern",
     company: "Global E-Comm Services (Pvt.) Ltd",
-    duration: "2023",
-    description: "Created responsive user interfaces, integrated APIs, and improved the overall user experience of e-commerce platforms."
-  }
+    duration: "04 Weeks"  }
 ];
 
 const Experience = () => {
@@ -60,7 +57,6 @@ const Experience = () => {
                   <span className="text-pink-400 font-medium text-sm mb-3 block tracking-wide">{exp.duration}</span>
                   <h3 className="text-2xl font-bold mb-2 text-zinc-100">{exp.role}</h3>
                   <h4 className="text-zinc-400 font-medium mb-4">{exp.company}</h4>
-                  <p className="text-zinc-400 text-sm leading-relaxed font-light">{exp.description}</p>
                 </div>
               </div>
             </motion.div>

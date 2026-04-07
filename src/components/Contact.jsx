@@ -34,18 +34,7 @@ const Contact = () => {
             <span className="font-medium text-zinc-200">ismat6812@gmail.com</span>
           </motion.a>
 
-          <motion.a 
-            href="tel:03162661684"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(168,85,247,0.3)" }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex items-center gap-4 glass-panel hover:border-purple-500/50 px-8 py-5 rounded-2xl transition-all"
-          >
-            <Phone className="text-purple-400" />
-            <span className="font-medium text-zinc-200">0316-2661684</span>
-          </motion.a>
+          
 
           <motion.a 
             href="https://github.com/IsmatQasim"
