@@ -20,7 +20,7 @@ const skillCategories = [
   },
   {
     title: "Core Concepts",
-    skills: ["OOP", "Data Structures", "Algorithms", "Clean Code Design", "Unit Testing"],
+    skills: ["OOP","Algorithms", "Clean Code Design", "Unit Testing"],
     color: "from-orange-300 to-rose-300"
   }
 ];

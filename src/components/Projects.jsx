@@ -199,6 +199,27 @@ const Projects = () => {
           background: rgba(255,255,255,0.15);
           border-color: rgba(255,255,255,0.2);
         }
+        
+        /* Mobile Responsiveness for Arrows */
+        @media (max-width: 768px) {
+          .my-swiper .swiper-button-next,
+          .my-swiper .swiper-button-prev {
+            width: 32px;
+            height: 32px;
+            background: rgba(0,0,0,0.3);
+            border-color: rgba(255,255,255,0.05);
+          }
+          .my-swiper .swiper-button-next:after,
+          .my-swiper .swiper-button-prev:after {
+            font-size: 12px;
+          }
+          .my-swiper .swiper-button-prev {
+            left: 2px;
+          }
+          .my-swiper .swiper-button-next {
+            right: 2px;
+          }
+        }
       `}</style>
     </section>
   );
