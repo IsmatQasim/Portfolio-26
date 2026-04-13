@@ -16,6 +16,7 @@ import MealImage from '../assets/MealImage.png';
 import ChatbotImage from '../assets/ChatbotImage.png';
 import OrionImage from '../assets/OrionImage.png';
 import NotesImage from '../assets/NotesImage.png';
+import JobImage from '../assets/JobImage.png';
 const projects = [
     {
     image: NotesImage,
@@ -46,6 +47,13 @@ const projects = [
     description: "Developed a Chatbot named ChatGPT 2.0 using Python (GPT API) and for UI I used HTML, CSS & JS.",
     GithubLink: "https://github.com/IsmatQasim/Chatbot-with-pytho",
     RepoLink: "https://github.com/IsmatQasim/Chatbot-with-python",
+  },
+   {
+    image: JobImage,
+    title: "Job Application Tracker",
+    description: "A Job Application Tracker built with Vanilla JavaScript featuring CRUD operations, search, status filtering, and localStorage persistence.",
+    GithubLink: "https://job-appp-tracker.netlify.app/",
+    RepoLink: "https://github.com/IsmatQasim/Job-Application-Tracker",
   },
    {
     image: MealImage,
