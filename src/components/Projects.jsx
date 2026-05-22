@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, EffectCoverflow, Autoplay } from 'swiper/modules';
 import { ExternalLink } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Import Swiper styles
 import 'swiper/css';
