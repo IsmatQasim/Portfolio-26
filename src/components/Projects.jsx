@@ -25,8 +25,8 @@ const projects = [
     title: "iURL",
     description:
       "iURL is a full-stack URL shortener built with React, FastAPI, and MongoDB. It allows users to generate short links instantly with custom aliases, fast redirection, and real-time URL history management.",
-    GithubLink: "https://github.com/IsmatQasim/URL-Shortener",
-    RepoLink: "https://iurl.netlify.app/",
+    GithubLink: "https://iurl.netlify.app/",
+    RepoLink: "https://github.com/IsmatQasim/URL-Shortener",
   },
   {
     image: NotesImage,
