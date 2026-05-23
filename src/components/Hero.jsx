@@ -72,18 +72,7 @@ const Hero = () => {
         {/* Left Side: Ultra-Premium Type-Forward & Scroll Reveal */}
         <div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left max-w-2xl w-full">
           
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex items-center gap-3 px-4 py-2 rounded-full border border-pink-500/30 bg-pink-500/10 mb-8 w-max mx-auto lg:mx-0 backdrop-blur-md shadow-[0_0_20px_rgba(236,72,153,0.1)]"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
-            </span>
-            <span className="text-pink-200 text-xs tracking-widest uppercase font-semibold">Available for Work</span>
-          </motion.div>
+        
 
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
