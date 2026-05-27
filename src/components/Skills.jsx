@@ -1,76 +1,60 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const skillCategories = [
-  {
-    title: "Front-End Development",
-    skills: ["HTML5", "CSS3", "JavaScript", "React", "Angular", "TailwindCSS", "Bootstrap",],
-    color: "from-pink-400 to-rose-400"
-  },
-  {
-    title: "Back-End & APIs",
-    skills: ["Node.js", "REST APIs","GraphQL","API Integration", "Express.js", "MongoDB"],
-    color: "from-green-400 to-emerald-400"
-  },
-
-  {
-    title: "Tools & Quality",
-    skills: ["Git", "GitHub", "TypeScript", "Figma", "Python", "Pino Logger", "SonarQube"],
-    color: "from-indigo-400 to-blue-400"
-  },
-  {
-    title: "Core Concepts",
-    skills: ["OOP","Algorithms", "Clean Code Design", "Unit Testing"],
-    color: "from-orange-300 to-rose-300"
-  }
+const skills = [
+  "React.js",
+  "JavaScript",
+  "Node.js + Express",
+  "Tailwind CSS",
+  "FastAPI + Python",
+  "MongoDB + SQL",
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="container mx-auto px-6 max-w-5xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Technical Arsenal</h2>
-          <div className="w-20 h-1 dream-gradient-bg mx-auto rounded-full mb-8" />
-          <p className="text-zinc-400 max-w-2xl mx-auto text-lg font-light transition-colors">
-            A comprehensive toolkit that I leverage to build robust, scalable, and visually appealing applications.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, idx) => (
-            <motion.div
-              key={category.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+    <section className="container py-32">
+      <span className="section-label">// TECHNICAL_ARSENAL</span>
+      
+      <div className="grid lg:grid-cols-12 gap-24 items-end">
+        <div className="lg:col-span-8 space-y-px">
+          {skills.map((skill, idx) => (
+            <motion.div 
+              key={idx}
+              className="group flex items-baseline gap-8 border-b border-white/5 py-10 transition-colors hover:bg-white/[0.02]"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.1, duration: 0.5 }}
-              className="glass-panel p-8 rounded-3xl relative overflow-hidden group"
+              transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${category.color} opacity-10 blur-[80px] rounded-full group-hover:opacity-30 transition-opacity duration-700`} />
-              
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 text-zinc-100">
-                <span className={`w-2.5 h-2.5 rounded-full bg-gradient-to-r ${category.color}`} />
-                {category.title}
+              <span className="font-mono text-[11px] text-white/10 group-hover:text-white/40 transition-colors">0{idx + 1}</span>
+              <h3 className="font-editorial text-[10vw] md:text-[6.5vw] text-white/10 group-hover:text-white transition-all duration-700 cursor-none select-none">
+                {skill}
               </h3>
-              
-              <div className="flex flex-wrap gap-3 relative z-10">
-                {category.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-4 py-2 bg-zinc-800/40 hover:bg-zinc-700/60 border border-white/5 hover:border-white/20 rounded-xl text-sm font-medium text-zinc-300 hover:text-white transition-all duration-300 cursor-default"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
             </motion.div>
           ))}
+        </div>
+
+        <div className="lg:col-span-4 pb-12">
+          <div className="p-12 border border-white/5 bg-[#050505] space-y-12">
+            <div className="space-y-4">
+              <h4 className="meta-tiny opacity-40">CAPABILITIES</h4>
+              <p className="font-main text-[13px] text-white/40 leading-relaxed uppercase">
+                Architecture of scalable systems <br />
+                Fluid motion design <br />
+                Performance optimization <br />
+                Rapid prototyping
+              </p>
+            </div>
+            
+            <div className="flex justify-between items-center opacity-20">
+              <div className="flex gap-1">
+                {[...Array(6)].map((_, i) => (
+                  <div key={i} className="w-1 h-4 bg-white" />
+                ))}
+              </div>
+              <span className="font-mono text-[9px] tracking-widest">STABLE_BUILD</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

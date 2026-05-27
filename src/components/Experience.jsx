@@ -1,67 +1,49 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Briefcase } from 'lucide-react';
 
 const experiences = [
-  {
-    id: 1,
-    role: "MERN Stack Developer Intern",
-    company: "10Pearls",
-    duration: "08 Weeks"
-  },
-  {
-    id: 2,
-    role: "Front-end Developer Intern",
-    company: "Global E-Comm Services (Pvt.) Ltd",
-    duration: "04 Weeks"  }
+  { role: "MERN_ENG_INTERN", company: "10PEARLS", period: "2024", duration: "08W" },
+  { role: "FRONTEND_INTERN", company: "GLOBAL_E-COMM", period: "2023", duration: "04W" },
 ];
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-24 relative overflow-hidden">
-      <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Experience</h2>
-          <div className="w-20 h-1 dream-gradient-bg mx-auto rounded-full mb-8" />
-        </motion.div>
+    <section id="experience" className="container py-32">
+      <div className="mb-24">
+        <span className="section-label">// PROFESSIONAL_LOG</span>
+        <h2 className="font-editorial text-[18vw] md:text-[14vw] text-white">LOG</h2>
+      </div>
 
-        <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-4 w-[1px] bg-gradient-to-b from-pink-500/20 via-purple-500/20 to-transparent" />
-
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={exp.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className={`flex flex-col md:flex-row items-center justify-between mb-16 ${
-                index % 2 === 0 ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              <div className="w-full md:w-5/12 hidden md:block" />
-              
-              <div className="z-10 bg-zinc-950 border border-pink-500/30 w-12 h-12 rounded-full flex items-center justify-center text-pink-400 shadow-[0_0_20px_rgba(236,72,153,0.2)] mb-6 md:mb-0">
-                <Briefcase size={20} />
-              </div>
-
-              <div className="w-full md:w-5/12">
-                <div className="glass-panel p-8 rounded-3xl hover:border-pink-500/30 transition-colors duration-300 relative group overflow-hidden">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/10 rounded-full blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <span className="text-pink-400 font-medium text-sm mb-3 block tracking-wide">{exp.duration}</span>
-                  <h3 className="text-2xl font-bold mb-2 text-zinc-100">{exp.role}</h3>
-                  <h4 className="text-zinc-400 font-medium mb-4">{exp.company}</h4>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="space-y-px bg-white/5 border border-white/5">
+        {experiences.map((exp, idx) => (
+          <motion.div 
+            key={idx} 
+            className="group grid md:grid-cols-12 gap-8 items-center py-16 px-8 md:px-12 bg-black transition-all duration-700 hover:bg-[#050505]"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: idx * 0.2 }}
+          >
+            <div className="md:col-span-2">
+              <span className="meta-tiny opacity-20 group-hover:opacity-60 transition-opacity">{exp.period}</span>
+            </div>
+            
+            <div className="md:col-span-7">
+               <h3 className="font-editorial text-[8vw] md:text-[5vw] text-white/40 group-hover:text-white transition-all duration-700">
+                {exp.role}
+              </h3>
+            </div>
+            
+            <div className="md:col-span-3 text-right">
+              <p className="font-main text-[16px] text-white/20 group-hover:text-white/60 transition-all duration-700 uppercase tracking-widest leading-none mb-2">
+                {exp.company}
+              </p>
+              <span className="meta-tiny opacity-10 group-hover:opacity-30 transition-opacity">
+                CONTRIBUTION: {exp.duration}
+              </span>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

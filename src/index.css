@@ -1,47 +1,152 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Pixelify+Sans:wght@700&family=Share+Tech+Mono&display=swap');
 
-@theme {
-  --color-primary-400: #f472b6; /* pink-400 */
-  --color-primary-500: #ec4899; /* pink-500 */
-  --color-accent-400: #a78bfa; /* purple-400 */
-  --color-accent-500: #8b5cf6; /* purple-500 */
-  --color-dark-surface: #1e1b4b; /* very dark purple/blue */
-  --color-dark-bg: #09090b; /* zinc-950 */
-  --font-sans: "Outfit", "Inter", system-ui, sans-serif;
+:root {
+  --bg-color: #000000;
+  --text-primary: #FFFFFF;
+  --text-dim: #BFBFBF;
+  --text-muted: #7A7A7A;
 }
 
-@layer base {
-  body {
-    @apply bg-[#09090b] text-zinc-100 font-sans selection:bg-pink-500/30 overflow-x-hidden;
-    /* subtle noise texture */
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-    background-attachment: fixed;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 0 !important;
+  cursor: none !important;
+}
+
+@media (pointer: coarse) {
+  * {
+    cursor: auto !important;
   }
 }
 
-.glass-panel {
-  @apply bg-zinc-900/40 backdrop-blur-xl border border-white/5 shadow-2xl;
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #09090b;
-}
-::-webkit-scrollbar-thumb {
-  background: #27272a;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Aesthetic dreamy gradients */
-.dream-gradient-text {
-  @apply text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400;
+/* ATMOSPHERE: 10% Retro OS */
+.retro-scanline {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.6;
 }
-.dream-gradient-bg {
-  @apply bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500;
+
+.pixel-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  opacity: 0.02;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Typography System */
+.font-main {
+  font-family: 'Inter', sans-serif;
+}
+
+.font-editorial {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.font-mono {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.font-pixel {
+  font-family: 'Pixelify Sans', sans-serif;
+}
+
+/* Layout */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4vw;
+}
+
+.poster-section {
+  min-height: 100vh;
+  padding: 10vh 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+/* Components */
+.section-label {
+  font-size: 11px;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  display: block;
+}
+
+.meta-tiny {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.btn-minimal {
+  display: inline-flex;
+  padding: 14px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+}
+
+.btn-minimal:hover {
+  background: var(--text-primary);
+  color: var(--bg-color);
+  border-color: var(--text-primary);
+}
+
+/* Animation Utilities */
+.blink {
+  animation: blink 0.8s steps(2) infinite;
+}
+
+@keyframes blink {
+  to { opacity: 0; }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.animate-scanline {
+  animation: scanline 8s linear infinite;
 }
