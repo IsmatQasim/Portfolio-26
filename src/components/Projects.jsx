@@ -43,12 +43,20 @@ const Projects = () => {
           >
             {/* Project Image Container */}
             <div className="aspect-video relative overflow-hidden mb-12 border border-white/5 grayscale group-hover:grayscale-0 transition-all duration-1000">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover opacity-30 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Open ${project.title}`}
+                className="relative block w-full h-full"
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover opacity-30 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 ease-out cursor-pointer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
+              </a>
             </div>
 
             {/* Content Group */}
