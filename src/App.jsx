@@ -7,7 +7,6 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Experience from './components/Experience';
 import Education from './components/Education';
-import Contact from './components/Contact';
 import Cursor from './components/Cursor';
 import LoadingScreen from './components/LoadingScreen';
 
@@ -34,7 +33,6 @@ function App() {
             <Projects />
             <Experience />
             <Education />
-            <Contact />
           </main>
           
           <footer className="py-32 text-center">

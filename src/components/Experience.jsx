@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const experiences = [
-  { role: "MERN_ENG_INTERN", company: "10PEARLS", period: "2024", duration: "08W" },
+  { role: "MERN_STACK_INTERN", company: "10PEARLS", period: "2024", duration: "08W" },
   { role: "FRONTEND_INTERN", company: "GLOBAL_E-COMM", period: "2023", duration: "04W" },
 ];
 

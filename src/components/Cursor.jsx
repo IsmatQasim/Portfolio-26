@@ -25,29 +25,25 @@ const Cursor = () => {
     <>
       {/* Primary Solid White Block */}
       <motion.div
-        className="fixed top-0 left-0 w-5 h-5 bg-white z-[12000] pointer-events-none"
+        className="fixed top-0 left-0 w-6 h-6 rounded-full bg-white z-[12000] pointer-events-none shadow-[0_0_24px_rgba(255,255,255,0.25)]"
         style={{
           x: cursorX,
           y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-          scale: isHovering ? 2.5 : 1,
-          boxShadow: "0 0 15px rgba(255,255,255,0.2)"
+          scale: isHovering ? 2.2 : 1
         }}
         transition={{ type: "spring", stiffness: 400, damping: 30 }}
       />
       
       {/* Outer Tracking Frame */}
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border border-white/40 z-[11999] pointer-events-none"
+        className="fixed top-0 left-0 w-14 h-14 rounded-full border border-white/30 z-[11999] pointer-events-none"
         style={{
           x: cursorX,
           y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-          scale: isHovering ? 1.8 : 1,
-          opacity: isHovering ? 0 : 0.5
+          scale: isHovering ? 1.6 : 1,
+          opacity: isHovering ? 0 : 0.38
         }}
+        transition={{ type: "spring", stiffness: 300, damping: 28 }}
       />
     </>
   );

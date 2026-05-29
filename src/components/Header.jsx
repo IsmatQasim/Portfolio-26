@@ -11,8 +11,7 @@ const Header = () => {
         {[
           { name: 'ARCHIVE', id: 'projects' },
           { name: 'IDENTITY', id: 'about' },
-          { name: 'LOG', id: 'experience' },
-          { name: 'SIGNAL', id: 'contact' }
+          { name: 'LOG', id: 'experience' }
         ].map((item) => (
           <a
             key={item.id}

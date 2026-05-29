@@ -66,6 +66,18 @@ const Hero = () => {
                 <span className="opacity-20 group-hover:opacity-100 group-hover:translate-x-1 transition-all">→</span>
               </a>
             </div>
+
+            <div className="mt-12 grid gap-3 sm:grid-cols-3">
+              <a href="mailto:ismat6812@gmail.com" className="font-mono text-[12px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">
+                email
+              </a>
+              <a href="https://github.com/IsmatQasim" target="_blank" rel="noreferrer" className="font-mono text-[12px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">
+                github
+              </a>
+              <a href="https://linkedin.com/in/ismat-qasim-936140246/" target="_blank" rel="noreferrer" className="font-mono text-[12px] uppercase tracking-[0.2em] text-white/60 hover:text-white transition-colors">
+                linkedin
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
